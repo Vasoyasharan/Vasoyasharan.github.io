@@ -1,8 +1,8 @@
-// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  trailingSlash: true, // optional
-};
+  trailingSlash: true,
+  assetPrefix: './', // <-- this is the key for GH Pages
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
