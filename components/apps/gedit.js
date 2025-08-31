@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 import emailjs from '@emailjs/browser';
 
 export class Gedit extends Component {
@@ -17,53 +17,98 @@ export class Gedit extends Component {
     }
 
     sendMessage = async () => {
-        let name = $("#sender-name").val();
-        let subject = $("#sender-subject").val();
-        let message = $("#sender-message").val();
+    let name = $("#sender-name").val();
+    let subject = $("#sender-subject").val();
+    let message = $("#sender-message").val();
 
-        name = name.trim();
-        subject = subject.trim();
-        message = message.trim();
+    name = name.trim();
+    subject = subject.trim();
+    message = message.trim();
 
-        let error = false;
+    let error = false;
 
-        if (name.length === 0) {
-            $("#sender-name").val('');
-            $("#sender-name").attr("placeholder", "Name must not be Empty!");
-            error = true;
-        }
-
-        if (message.length === 0) {
-            $("#sender-message").val('');
-            $("#sender-message").attr("placeholder", "Message must not be Empty!");
-            error = true;
-        }
-        if (error) return;
-
-        this.setState({ sending: true });
-
-        const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
-        const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-        const templateParams = {
-            'name': name,
-            'subject': subject,
-            'message': message,
-        }
-
-        emailjs.send(serviceID, templateID, templateParams).then(() => {
-            this.setState({ sending: false });
-            $("#close-gedit").trigger("click");
-        }).catch(() => {
-            this.setState({ sending: false });
-            $("#close-gedit").trigger("click");
-        })
-
-        ReactGA.event({
-            category: "Send Message",
-            action: `${name}, ${subject}, ${message}`
-        });
-
+    if (name.length === 0) {
+        $("#sender-name").val('');
+        $("#sender-name").attr("placeholder", "Name must not be Empty!");
+        error = true;
     }
+
+    if (message.length === 0) {
+        $("#sender-message").val('');
+        $("#sender-message").attr("placeholder", "Message must not be Empty!");
+        error = true;
+    }
+    if (error) return;
+
+    this.setState({ sending: true });
+
+    const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    const templateParams = {
+        name,
+        subject,
+        message,
+    };
+
+    try {
+        await emailjs.send(serviceID, templateID, templateParams);
+    } catch (err) {
+        console.error("Email send failed:", err);
+    }
+
+    this.setState({ sending: false });
+    $("#close-gedit").trigger("click");
+};
+
+
+    // sendMessage = async () => {
+    //     let name = $("#sender-name").val();
+    //     let subject = $("#sender-subject").val();
+    //     let message = $("#sender-message").val();
+
+    //     name = name.trim();
+    //     subject = subject.trim();
+    //     message = message.trim();
+
+    //     let error = false;
+
+    //     if (name.length === 0) {
+    //         $("#sender-name").val('');
+    //         $("#sender-name").attr("placeholder", "Name must not be Empty!");
+    //         error = true;
+    //     }
+
+    //     if (message.length === 0) {
+    //         $("#sender-message").val('');
+    //         $("#sender-message").attr("placeholder", "Message must not be Empty!");
+    //         error = true;
+    //     }
+    //     if (error) return;
+
+    //     this.setState({ sending: true });
+
+    //     const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
+    //     const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    //     const templateParams = {
+    //         'name': name,
+    //         'subject': subject,
+    //         'message': message,
+    //     }
+
+    //     emailjs.send(serviceID, templateID, templateParams).then(() => {
+    //         this.setState({ sending: false });
+    //         $("#close-gedit").trigger("click");
+    //     }).catch(() => {
+    //         this.setState({ sending: false });
+    //         $("#close-gedit").trigger("click");
+    //     })
+
+    //     ReactGA.event({
+    //         category: "Send Message",
+    //         action: `${name}, ${subject}, ${message}`
+    //     });
+
+    // }
 
     render() {
         return (

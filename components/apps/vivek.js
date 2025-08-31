@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 
 export class AboutVivek extends Component {
 
@@ -38,7 +38,7 @@ export class AboutVivek extends Component {
         localStorage.setItem("about-section", screen);
 
         // google analytics
-        ReactGA.send({ hitType: "pageview", page: `/${screen}`, title: "Custom Title" });
+        // ReactGA.send({ hitType: "pageview", page: `/${screen}`, title: "Custom Title" });
 
 
         this.setState({
@@ -55,27 +55,24 @@ export class AboutVivek extends Component {
         return (
             <>
                 <div id="about" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "about" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="about vivek" src="./themes/Yaru/status/about.svg" />
+                    <img className=" w-3 md:w-4" alt="about Sharan's" src="./themes/Yaru/status/about.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">About Me</span>
                 </div>
                 <div id="education" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "education" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="vivek' education" src="./themes/Yaru/status/education.svg" />
+                    <img className=" w-3 md:w-4" alt="Sharan's education" src="./themes/Yaru/status/education.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Education</span>
                 </div>
                 <div id="skills" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "skills" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="vivek' skills" src="./themes/Yaru/status/skills.svg" />
+                    <img className=" w-3 md:w-4" alt="Sharan's skills" src="./themes/Yaru/status/skills.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Skills</span>
                 </div>
                 <div id="projects" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "projects" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="vivek' projects" src="./themes/Yaru/status/projects.svg" />
+                    <img className=" w-3 md:w-4" alt="Sharan's projects" src="./themes/Yaru/status/projects.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Projects</span>
                 </div>
                 <div id="resume" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "resume" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
-                    <img className=" w-3 md:w-4" alt="vivek's resume" src="./themes/Yaru/status/download.svg" />
+                    <img className=" w-3 md:w-4" alt="Sharan's resume" src="./themes/Yaru/status/download.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Resume</span>
-                </div>
-                <div className='my-0.5 w-28 md:w-full h-8 px-2 md:px-2.5 flex' >
-                    <iframe src="https://github.com/sponsors/vivek9patel/button" title="Sponsor vivek9patel" width={"100%"} height={"100%"} ></iframe>
                 </div>
             </>
         );
@@ -114,25 +111,41 @@ function About() {
     return (
         <>
             <div className="w-20 md:w-28 my-4 bg-white rounded-full">
-                <img className="w-full" src="./images/logos/bitmoji.png" alt="Vivek Patel Logo" />
+                <img className="w-full" src="./images/logos/bitmoji.png" alt="Sharan Vasoya Logo" />
             </div>
             <div className=" mt-4 md:mt-8 text-lg md:text-2xl text-center px-1">
-                <div>my name is <span className="font-bold">Vivek Patel</span> ,</div>
-                <div className="font-normal ml-1">I'm a <span className="text-pink-600 font-bold">Frontend Engineer!</span></div>
+                <div>My name is <span className="font-bold">Sharan Vasoya</span>,</div>
+                <div className="font-normal ml-1">
+                    I'm a <span className="text-pink-600 font-bold">Cybersecurity Enthusiast & Red Teamer!</span>
+                </div>
             </div>
             <div className=" mt-4 relative md:my-8 pt-px bg-white w-32 md:w-48">
                 <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-0"></div>
                 <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-0"></div>
             </div>
             <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
-                <li className=" list-pc">I'm a <span className=" font-medium">Graduate Student</span> currently pursuing Computer Science. I've completed my 6 month SWE intern at <u className=' cursor-pointer '> <a href="https://en.wikipedia.org/wiki/HackerRank" target={"_blank"}>HackerRank</a> </u>, and now I'm looking for full-time frontend engineer roles! ( Hit me up <a className='text-underline' href='mailto:vivek.p9737@gmail.com'><u>@vivek.p9737@gmail.com</u></a> :) )</li>
-                <li className=" mt-3 list-building"> I enjoy building awesome softwares that solve practical problems.</li>
-                <li className=" mt-3 list-time"> When I am not coding my next project, I like to spend my time reading books, playing minecraft or watching <a href="https://www.youtube.com/channel/UCBa659QWEk1AI4Tg--mrJ2A" target="_blank" rel="noreferrer"> tom scott's videos.</a></li>
-                <li className=" mt-3 list-star"> And I also have interest in Deep Learning & Computer Vision!</li>
+                <li className=" list-pc">
+                    I'm a <span className=" font-medium">Master’s Student in Cybersecurity (MSCCS)</span> at BAOU, 
+                    with a passion for <span className="font-medium">Offensive Security & Ethical Hacking</span>. 
+                    Currently exploring Red Teaming, CTFs, and penetration testing!
+                </li>
+                <li className=" mt-3 list-building">
+                    I love working on projects like automated recon tools, exploit testing, and cybersecurity cheatsheets 
+                    that help learners and professionals alike.
+                </li>
+                <li className=" mt-3 list-time">
+                    When I’m not breaking into systems (ethically 😉), you’ll find me exploring 
+                    new Linux setups, customizing my environment, or diving into books/videos on hacking and 
+                    security research.
+                </li>
+                <li className=" mt-3 list-star">
+                    My key interests include <span className=" font-medium">Red Teaming, Malware Analysis, Active Directory Attacks, and Cloud Pentesting</span>.
+                </li>
             </ul>
         </>
     )
 }
+
 function Education() {
     return (
         <>
@@ -146,32 +159,25 @@ function Education() {
             <ul className=" w-10/12  mt-4 ml-4 px-0 md:px-1">
                 <li className="list-disc">
                     <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Arizona State University
+                        Dr. Babasaheb Ambedkar Open University (BAOU), Ahmedabad
                     </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">2022 - 2024</div>
-                    <div className=" text-sm md:text-base">Computer Science</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">GPA &nbsp; 4.0/4.0</div>
+                    <div className=" text-sm text-gray-400 mt-0.5">2025 – 2027</div>
+                    <div className=" text-sm md:text-base">Master of Science in Cyber Security</div>
                 </li>
                 <li className="list-disc">
                     <div className=" text-lg md:text-xl mt-4 text-left font-bold leading-tight">
-                        Pandit Deendayal Energy University - PDEU
+                        SDJ International College, Surat
                     </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">2018 - 2022</div>
-                    <div className=" text-sm md:text-base">Computer Engineering</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">CGPA &nbsp; 9.35/10</div>
-                </li>
-                <li className="list-disc mt-5">
-                    <div className=" text-lg md:text-xl text-left font-bold leading-tight">
-                        Class 12<sup>th</sup>
-                    </div>
-                    <div className=" text-sm text-gray-400 mt-0.5">2016 - 2018</div>
-                    <div className=" text-sm md:text-base">Maths, Physics, Chemistry</div>
-                    <div className="text-sm text-gray-300 font-bold mt-1">Percentile Rank &nbsp; 94.1%</div>
+                    <div className=" text-sm text-gray-400 mt-0.5">2022 – 2025</div>
+                    <div className=" text-sm md:text-base">Bachelor of Computer Applications</div>
+                    <div className=" text-sm text-gray-300 font-bold mt-1">CGPA &nbsp; 7.1/10</div>
+
                 </li>
             </ul>
         </>
     )
 }
+
 function Skills() {
     return (
         <>
@@ -184,47 +190,55 @@ function Skills() {
             </div>
             <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list">
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    I've worked with a wide variety of programming languages & frameworks.
+                    I've worked with a wide variety of offensive security tools and programming languages.
                 </li>
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div> My areas of expertise are <strong className="text-ubt-gedit-orange">front-end development, React.js & javascript!</strong></div>
+                    <div> My areas of expertise are <strong className="text-ubt-gedit-orange">Red Teaming, Penetration Testing & Offensive Security.</strong></div>
                 </li>
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div>Here are my most frequently used</div>
+                    <div>Here are my most frequently used tools & technologies:</div>
                 </li>
             </ul>
+
             <div className="w-full md:w-10/12 flex mt-4">
                 <div className=" text-sm text-center md:text-base w-1/2 font-bold">Languages & Tools</div>
-                <div className=" text-sm text-center md:text-base w-1/2 font-bold">Frameworks & Libraries</div>
+                <div className=" text-sm text-center md:text-base w-1/2 font-bold">Frameworks & Platforms</div>
             </div>
+
             <div className="w-full md:w-10/12 flex justify-center items-start font-bold text-center">
                 <div className="px-2 w-1/2">
                     <div className="flex flex-wrap justify-center items-start w-full mt-2">
-                        <img className="m-1" src="https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A" alt="vivek javascript" />
-                        <img className="m-1" src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat&logo=c%2B%2B&logoColor=white" alt="vivek c++" />
-                        <img className="m-1" src="http://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff" alt="vivek python" />
-                        <img className="m-1" src="https://img.shields.io/badge/Dart-0175C2?style=flat&logo=dart&logoColor=white" alt="vivek dart" />
-                        <a href="https://www.google.com/search?q=is+html+a+language%3F" target="_blank" rel="noreferrer"><img title="yes it's a language!" className="m-1" src="https://img.shields.io/badge/-HTML5-%23E44D27?style=flat&logo=html5&logoColor=ffffff" alt="vivek HTML" /></a>
-                        <img src="https://img.shields.io/badge/-Sass-%23CC6699?style=flat&logo=sass&logoColor=ffffff" alt="vivek SASS" className="m-1" />
-                        <img src="https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff" alt="vivek git" className="m-1" />
-                        <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=ffffff" alt="vivek firebase" className="m-1" />
+                        <img className="m-1" src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff" alt="python" />
+                        <img className="m-1" src="https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000" alt="javascript" />
+                        <img className="m-1" src="https://img.shields.io/badge/-Bash-4EAA25?style=flat&logo=gnubash&logoColor=ffffff" alt="bash" />
+                        <img className="m-1" src="https://img.shields.io/badge/-Wireshark-1679A7?style=flat&logo=wireshark&logoColor=ffffff" alt="wireshark" />
+                        <img className="m-1" src="https://img.shields.io/badge/-Nmap-00457C?style=flat&logo=security&logoColor=ffffff" alt="nmap" />
+                        <img className="m-1" src="https://img.shields.io/badge/-BurpSuite-FF6633?style=flat&logo=burpsuite&logoColor=white" alt="burpsuite" />
+                        <img className="m-1" src="https://img.shields.io/badge/-Metasploit-2E8B57?style=flat&logo=security&logoColor=white" alt="metasploit" />
+                        <img className="m-1" src="https://img.shields.io/badge/-Hydra-000000?style=flat&logo=security&logoColor=white" alt="hydra" />
+                        <img className="m-1" src="https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff" alt="git" />
                     </div>
                 </div>
+
                 <div className="px-2 flex flex-wrap items-start w-1/2">
                     <div className="flex flex-wrap justify-center items-start w-full mt-2">
-                        <img className=" m-1" src="https://img.shields.io/badge/Next-black?style=flat&logo=next.js&logoColor=ffffff" alt="vivek next" />
-                        <img className=" m-1" src="https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff" alt="vivek react" />
-                        <img className="m-1" src="https://img.shields.io/badge/Flutter-02569B?style=flat&logo=flutter&logoColor=white" alt="vivek flutter" />
-                        <img className="m-1" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="vivek tailwind css" />
-                        <img src="https://img.shields.io/badge/-Nodejs-339933?style=flat&logo=Node.js&logoColor=ffffff" alt="vivek node.js" className="m-1" />
-                        <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white" alt="vivek jquery" className="m-1" />
-                        <img className="m-1" src="https://img.shields.io/badge/Redux-593D88?style=flat&logo=redux&logoColor=white" alt="vivek redux" />
+                        <img className="m-1" src="https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=000" alt="linux" />
+                        <img className="m-1" src="https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white" alt="windows" />
+                        <img className="m-1" src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=000" alt="react" />
+                        <img className="m-1" src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="nodejs" />
+                        <img className="m-1" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="tailwind" />
+                        <img className="m-1" src="https://img.shields.io/badge/GNS3-0081CB?style=flat&logo=gns3&logoColor=white" alt="gns3" />
+                        <img className="m-1" src="https://img.shields.io/badge/VirtualBox-183A61?style=flat&logo=virtualbox&logoColor=white" alt="virtualbox" />
+                        <img className="m-1" src="https://img.shields.io/badge/Packet Tracer-000000?style=flat&logo=cisco&logoColor=white" alt="packet tracer" />
                     </div>
                 </div>
             </div>
+
             <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list mt-4">
                 <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <span> And of course,</span> <img className=" inline ml-1" src="http://img.shields.io/badge/-Linux-0078D6?style=plastic&logo=linux&logoColor=ffffff" alt="vivek linux" /> <span>!</span>
+                    <span> And of course,</span> 
+                    <img className=" inline ml-1" src="https://img.shields.io/badge/-Linux-0078D6?style=plastic&logo=linux&logoColor=ffffff" alt="linux" /> 
+                    <span> is my daily driver!</span>
                 </li>
             </ul>
         </>
@@ -234,167 +248,154 @@ function Skills() {
 function Projects() {
     const project_list = [
         {
+            name: "RedHawk – Automated Recon & Vulnerability Scanner",
+            date: "2025",
+            link: "https://github.com/Vasoyasharan/RedHawk",
+            description: [
+                "Automated recon & vulnerability scanner integrating Nmap, Sublist3r, WhatWeb, sqlmap & Shodan API. Includes advanced SQLi testing, WHOIS/IP info, and PDF reporting.",
+            ],
+            domains: ["python", "nmap", "sqlmap", "shodan", "automation"]
+        },
+        {
+            name: "CyberCheat – Red Team Cheatsheet Website",
+            date: "2025",
+            link: "https://cyber-cheatsheet.onrender.com/",
+            description: [
+                "React-based cheatsheet website with animated collapsible sections, categorized notes, and copy-to-clipboard. Covers Linux/Windows PrivEsc, AD, C2, payloads & cloud pentesting.",
+            ],
+            domains: ["react", "tailwindcss", "javascript"]
+        },
+        {
+            name: "CyberLock – Password Strength Meter",
+            date: "2025",
+            link: "https://vasoyasharan.github.io/PasswordStrengthMeter/",
+            description: [
+                "Web app that dynamically evaluates password strength based on entropy, dictionary words, and brute-force resistance.",
+            ],
+            domains: ["javascript", "security"]
+        },
+        {
+            name: "Hexpert – Cybersecurity Tools Hub",
+            date: "2025",
+            link: "https://vasoyasharan.github.io/Hexpert/",
+            description: [
+                "A collection of mini cybersecurity tools built in JavaScript, including encoders/decoders and hash utilities.",
+            ],
+            domains: ["javascript", "web-security"]
+        },
+        {
             name: "UbuntuOS Portfolio",
-            date: "Apr 2021",
-            link: "https://github.com/vivek9patel/vivek9patel.github.io",
+            date: "2021",
+            link: "https://github.com/Vasoyasharan/Vasoyasharan.github.io",
             description: [
-                "Personal portfolio website of theme Ubuntu 20.04, made using NEXT.js & tailwind CSS",
+                "Portfolio website with Ubuntu 20.04 theme, made using Next.js & Tailwind CSS.",
             ],
-            domains: ["javascript", "next.js", "tailwindcss"]
+            domains: ["next.js", "javascript", "tailwindcss"]
         },
         {
-            name: "Chrome Extension React Bolierplate",
-            date: "Dec 2021",
-            link: "https://github.com/vivek9patel/chrome-extension-react-boilerplate",
-            description: [
-                "A boilerplate code to build a chrome extension with react and webpack",
-            ],
-            domains: ["javascript", "chrome-extension"]
-        },
-        {
-            name: "CodeConnect",
-            date: "Nov 2021",
-            link: "https://github.com/vivek9patel/CodeConnect-frontend",
-            description: [
-                "A multi-language pair-programming platform with the features of video meeting and whiteboard. Built with React.js, Tailwind CSS, Chakra UI, Express & Socket.io.",
-            ],
-            domains: ["javascript", "tailwindcss"]
-        },
-        {
-            name: "Ad Free Spotify",
-            date: "Jun 2021",
+            name: "Chrome Extension – Ad Free Spotify",
+            date: "2021",
             link: "https://github.com/vivek9patel/ad-free-spotify",
             description: [
-                "Chrome extension to automatically mute/unmute Spotify tab when Advertisement starts and ends!",
+                "Chrome extension that auto-mutes/unmutes Spotify tab when ads play.",
             ],
             domains: ["javascript", "chrome-extension"]
-        },
-        {
-            name: "economist.com Unlocked",
-            date: "Mar 2021",
-            link: "https://github.com/vivek9patel/economist.com-unlocked",
-            description: [
-                "A chrome extension to read Paid Articles for Free & with no Ads, no subscription, no memberships!",
-            ],
-            domains: ["javascript", "chrome-extension"]
-        },
-        {
-            name: "Flutter banking app",
-            date: "Jan 2021",
-            link: "https://github.com/vivek9patel/flutter-banking-app",
-            description: [
-                "A Flutter & Firebase project for creating transactions between different Users and displaying the history of transactions done by all.",
-            ],
-            domains: ["flutter", "firestore", "dart", "firebase auth"]
-        },
-        {
-            name: "CPU scheduling application",
-            date: "Dec 2020",
-            link: "https://github.com/vivek9patel/CPU-Scheduling-APP-React-Native",
-            description: [
-                "React Native Application to visualize the CPU Scheduling algorithms with different Processes and Animations with gannt chart.",
-            ],
-            domains: ["react-native", "javascript"]
-        },
-        {
-            name: "Meditech Healthcare WebApp",
-            date: "Nov 2020",
-            link: "https://github.com/vivek9patel/Meditech-Healthcare",
-            description: [
-                "Developed Web Application to predict and diagnose diseases from x-ray images.",
-            ],
-            domains: ["javascript", "html5", "sass", "firebase", "tensorflow"]
-        },
-        {
-            name: "Problem Recommendation System",
-            date: "Sep 2020",
-            link: "https://github.com/vivek9patel/Improve-Codeforces",
-            description: [
-                "Django web application to suggest practice problems from the areas in which the user struggles to get pass in code-forces.",
-            ],
-            domains: ["django", "python", "codeforces-api", "javascript"]
-        },
-        {
-            name: "Cleanliness Automation",
-            date: "Dec 2019",
-            link: "https://github.com/vivek9patel/CPU-Scheduling-APP-React-Native",
-            description: [
-                "Developed Web Applications to automate Garbage collection and extraction systems for SSIP hackathon",
-            ],
         }
     ];
 
     const tag_colors = {
         "javascript": "yellow-300",
-        "firebase": "red-600",
-        "firestore": "red-500",
-        "firebase auth": "red-400",
-        "chrome-extension": "yellow-400",
-        "flutter": "blue-400",
-        "dart": "blue-500",
-        "react-native": "purple-500",
-        "html5": "pink-600",
-        "sass": "pink-400",
-        "tensorflow": "yellow-600",
-        "django": "green-600",
         "python": "green-200",
-        "codeforces-api": "gray-300",
+        "nmap": "blue-700",
+        "sqlmap": "yellow-600",
+        "shodan": "red-500",
+        "automation": "gray-400",
+        "react": "blue-400",
         "tailwindcss": "blue-300",
-        "next.js": "purple-600"
+        "next.js": "purple-600",
+        "security": "orange-500",
+        "web-security": "teal-400",
+        "chrome-extension": "yellow-400"
     }
+
 
     return (
         <>
-            <div className=" font-medium relative text-2xl mt-2 md:mt-4 mb-4">
+            <div className="font-medium relative text-2xl mt-2 md:mt-4 mb-4">
                 Projects
                 <div className="absolute pt-px bg-white mt-px top-full w-full">
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
                 </div>
             </div>
-            <iframe src="https://github.com/sponsors/vivek9patel/card" title="Sponsor vivek9patel" className='my-4 w-5/6 md:w-3/4' ></iframe>
 
-            {
-                project_list.map((project, index) => {
-                    const projectNameFromLink = project.link.split('/')
-                    const projectName = projectNameFromLink[projectNameFromLink.length - 1]
-                    return (
-                        <a key={index} href={project.link} target="_blank" rel="noreferrer" className="flex w-full flex-col px-4">
-                            <div className="w-full py-1 px-2 my-2 border border-gray-50 border-opacity-10 rounded hover:bg-gray-50 hover:bg-opacity-5 cursor-pointer">
-                                <div className="flex flex-wrap justify-between items-center">
-                                    <div className='flex justify-center items-center'>
-                                        <div className=" text-base md:text-lg mr-2">{project.name.toLowerCase()}</div>
-                                        <iframe src={`https://ghbtns.com/github-btn.html?user=vivek9patel&repo=${projectName}&type=star&count=true`} frameBorder="0" scrolling="0" width="150" height="20" title={project.name.toLowerCase()+"-star"}></iframe>
-                                    </div>
-                                    <div className="text-gray-300 font-light text-sm">{project.date}</div>
-                                </div>
-                                <ul className=" tracking-normal leading-tight text-sm font-light ml-4 mt-1">
-                                    {
-                                        project.description.map((desc, index) => {
-                                            return <li key={index} className="list-disc mt-1 text-gray-100">{desc}</li>;
-                                        })
-                                    }
-                                </ul>
-                                <div className="flex flex-wrap items-start justify-start text-xs py-2">
-                                    {
-                                        (project.domains ?
-                                            project.domains.map((domain, index) => {
-                                                return <span key={index} className={`px-1.5 py-0.5 w-max border border-${tag_colors[domain]} text-${tag_colors[domain]} m-1 rounded-full`}>{domain}</span>
-                                            })
+            {/* Creative Portfolio Card */}
+            <div className="my-4 w-5/6 md:w-3/4 p-4 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg shadow-lg flex flex-col md:flex-row items-center justify-between text-white">
+                <div className="mb-2 md:mb-0 text-center md:text-left">
+                    <div className="text-lg font-bold">Explore My Work</div>
+                    <div className="text-sm text-gray-200">Check out my GitHub, LinkedIn, or get in touch!</div>
+                </div>
+                <div className="flex flex-wrap gap-2 justify-center md:justify-end mt-2 md:mt-0">
+                    <a href="https://github.com/Vasoyasharan" target="_blank" rel="noreferrer" className="px-3 py-1 bg-white text-purple-600 font-bold rounded hover:bg-purple-50 transition">GitHub</a>
+                    <a href="https://www.linkedin.com/in/sharan-root/" target="_blank" rel="noreferrer" className="px-3 py-1 bg-white text-purple-600 font-bold rounded hover:bg-purple-50 transition">LinkedIn</a>
+                    <a href="mailto:sharanvasoya@proton.me" className="px-3 py-1 bg-white text-purple-600 font-bold rounded hover:bg-purple-50 transition">Contact</a>
+                </div>
+            </div>
 
-                                            : null)
-                                    }
+            {/* Project Cards */}
+            {project_list.map((project, index) => {
+                const projectName = project.link.split("/").pop();
+                return (
+                    <a key={index} href={project.link} target="_blank" rel="noreferrer" className="flex w-full flex-col px-4">
+                        <div className="w-full py-2 px-3 my-2 border border-gray-50 border-opacity-10 rounded hover:bg-gray-50 hover:bg-opacity-5 cursor-pointer transition-all duration-200">
+                            <div className="flex flex-wrap justify-between items-center">
+                                <div className='flex justify-center items-center'>
+                                    <div className="text-base md:text-lg mr-2">{project.name}</div>
+                                    <iframe
+                                        src={`https://ghbtns.com/github-btn.html?user=Vasoyasharan&repo=${projectName}&type=star&count=true`}
+                                        frameBorder="0"
+                                        scrolling="0"
+                                        width="150"
+                                        height="20"
+                                        title={`${project.name}-star`}
+                                    ></iframe>
                                 </div>
+                                <div className="text-gray-300 font-light text-sm">{project.date}</div>
                             </div>
-                        </a>
-                    )
-                })
-            }
+
+                            <ul className="tracking-normal leading-tight text-sm font-light ml-4 mt-1">
+                                {project.description.map((desc, idx) => (
+                                    <li key={idx} className="list-disc mt-1 text-gray-100">{desc}</li>
+                                ))}
+                            </ul>
+
+                            <div className="flex flex-wrap items-start justify-start text-xs py-2">
+                                {project.domains?.map((domain, idx) => (
+                                    <span
+                                        key={idx}
+                                        className="px-1.5 py-0.5 w-max m-1 rounded-full border"
+                                        style={{ borderColor: tag_colors[domain], color: tag_colors[domain] }}
+                                    >
+                                        {domain}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </a>
+                )
+            })}
         </>
-    )
+    );
 }
+
+
 function Resume() {
     return (
-        <iframe className="h-full w-full" src="./files/Vivek-Patel-Resume.pdf" title="vivek patel resume" frameBorder="0"></iframe>
-    )
+        <iframe
+            className="h-full w-full"
+            src="./files/sharanresume.pdf"
+            title="Sharan Vasoya Resume"
+            frameBorder="0"
+        ></iframe>
+    );
 }
