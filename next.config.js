@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  trailingSlash: true,
-  assetPrefix: './', // <-- this is the key for GH Pages
+  images: {
+    unoptimized: true,   // required for static export (no Next.js image server)
+  },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;

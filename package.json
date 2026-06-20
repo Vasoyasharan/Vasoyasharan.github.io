@@ -1,15 +1,11 @@
 {
-  "name": "Vasoyasharan-portfolio",
-  "version": "2.0.0",
-  "private": true,
   "homepage": "https://Vasoyasharan.github.io/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "export": "next export",
+    "predeploy": "rm -rf out && npm run build && npm run export",
     "deploy": "gh-pages -d out"
-
   },
   "engines": {
     "node": ">=16.x"
