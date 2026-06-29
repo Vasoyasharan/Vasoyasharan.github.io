@@ -17,6 +17,7 @@ export class AboutVivek extends Component {
         this.screens = {
             "about": <About />,
             "education": <Education />,
+            "experience": <Experience />,
             "skills": <Skills />,
             "projects": <Projects />,
             "resume": <Resume />,
@@ -61,6 +62,10 @@ export class AboutVivek extends Component {
                 <div id="education" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "education" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
                     <img className=" w-3 md:w-4" alt="Sharan's education" src="./themes/Yaru/status/education.svg" />
                     <span className=" ml-1 md:ml-2 text-gray-50 ">Education</span>
+                </div>
+                <div id="experience" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "experience" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
+                    <img className=" w-3 md:w-4" alt="Sharan's experience" src="./themes/Yaru/status/briefcase.svg" />
+                    <span className=" ml-1 md:ml-2 text-gray-50 ">Experience</span>
                 </div>
                 <div id="skills" tabIndex="0" onFocus={this.changeScreen} className={(this.state.active_screen === "skills" ? " bg-ub-orange bg-opacity-100 hover:bg-opacity-95" : " hover:bg-gray-50 hover:bg-opacity-5 ") + " w-28 md:w-full md:rounded-none rounded-sm cursor-default outline-none py-1.5 focus:outline-none duration-100 my-0.5 flex justify-start items-center pl-2 md:pl-2.5"}>
                     <img className=" w-3 md:w-4" alt="Sharan's skills" src="./themes/Yaru/status/skills.svg" />
@@ -116,7 +121,7 @@ function About() {
             <div className=" mt-4 md:mt-8 text-lg md:text-2xl text-center px-1">
                 <div>My name is <span className="font-bold">Sharan Vasoya</span>,</div>
                 <div className="font-normal ml-1">
-                    I'm a <span className="text-pink-600 font-bold">Cybersecurity Enthusiast & Red Teamer!</span>
+                    I'm a <span className="text-pink-600 font-bold">IT Infrastructure Specialist & Cybersecurity Enthusiast!</span>
                 </div>
             </div>
             <div className=" mt-4 relative md:my-8 pt-px bg-white w-32 md:w-48">
@@ -125,21 +130,16 @@ function About() {
             </div>
             <ul className=" mt-4 leading-tight tracking-tight text-sm md:text-base w-5/6 md:w-3/4 emoji-list">
                 <li className=" list-pc">
-                    I'm a <span className=" font-medium">Master’s Student in Cybersecurity (MSCCS)</span> at BAOU, 
-                    with a passion for <span className="font-medium">Offensive Security & Ethical Hacking</span>. 
-                    Currently exploring Red Teaming, CTFs, and penetration testing!
+                    I am a <span className=" font-medium">BCA graduate</span> and currently pursuing a <span className="font-medium">Master's in Cyber Security (MSCCS)</span>, with a strong passion for <span className="font-medium">IT Infrastructure, Network Security, and Cybersecurity Operations</span>.
                 </li>
                 <li className=" mt-3 list-building">
-                    I love working on projects like automated recon tools, exploit testing, and cybersecurity cheatsheets 
-                    that help learners and professionals alike.
+                    Currently, I work as an <span className="font-medium">IT Infrastructure Specialist at Suchi Semicon</span>, responsible for managing and maintaining the organization's IT ecosystem — ensuring secure, reliable, and efficient operations across users, systems, and network infrastructure.
                 </li>
                 <li className=" mt-3 list-time">
-                    When I’m not breaking into systems (ethically 😉), you’ll find me exploring 
-                    new Linux setups, customizing my environment, or diving into books/videos on hacking and 
-                    security research.
+                    My day-to-day responsibilities include: Microsoft 365 Administration, Firewall Management & Network Security Monitoring, Windows Server Administration, Endpoint Security, Active Directory & Access Control, Hardware/Software Support, Network Troubleshooting, and IT Asset Management & Security Compliance.
                 </li>
                 <li className=" mt-3 list-star">
-                    My key interests include <span className=" font-medium">Red Teaming, Malware Analysis, Active Directory Attacks, and Cloud Pentesting</span>.
+                    I hold the <span className=" font-medium">Fortinet Certified Fundamentals (FCF) in Cybersecurity</span> certification, and continuously work on strengthening skills in threat detection, vulnerability assessment, system hardening, and security best practices.
                 </li>
             </ul>
         </>
@@ -178,6 +178,44 @@ function Education() {
     )
 }
 
+function SkillBar({ label, percent }) {
+    return (
+        <div className="mb-3">
+            <div className="flex justify-between text-xs mb-1">
+                <span className="text-gray-300">{label}</span>
+                <span style={{ color: '#00e5a0' }}>{percent}%</span>
+            </div>
+            <div className="w-full rounded-full" style={{ background: '#1e2a3a', height: '5px' }}>
+                <div
+                    className="rounded-full"
+                    style={{ width: `${percent}%`, height: '5px', background: 'linear-gradient(90deg,#00b4d8,#00e5a0)' }}
+                />
+            </div>
+        </div>
+    );
+}
+
+function SkillTag({ label }) {
+    return (
+        <span className="px-2 py-1 m-1 rounded text-xs font-mono border"
+            style={{ borderColor: '#00e5a0', color: '#00e5a0', background: 'rgba(0,229,160,0.07)' }}>
+            {label}
+        </span>
+    );
+}
+
+function SkillCard({ title, icon, children }) {
+    return (
+        <div className="rounded-lg p-3 mb-3" style={{ background: '#111b27', border: '1px solid #1e3045' }}>
+            <div className="flex items-center mb-3">
+                <span className="mr-2" style={{ color: '#00e5a0' }}>{icon}</span>
+                <span className="font-bold text-sm" style={{ color: '#00e5a0' }}>{title}</span>
+            </div>
+            {children}
+        </div>
+    );
+}
+
 function Skills() {
     return (
         <>
@@ -188,61 +226,127 @@ function Skills() {
                     <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
                 </div>
             </div>
-            <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list">
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    I've worked with a wide variety of offensive security tools and programming languages.
-                </li>
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div> My areas of expertise are <strong className="text-ubt-gedit-orange">Red Teaming, Penetration Testing & Offensive Security.</strong></div>
-                </li>
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <div>Here are my most frequently used tools & technologies:</div>
-                </li>
-            </ul>
 
-            <div className="w-full md:w-10/12 flex mt-4">
-                <div className=" text-sm text-center md:text-base w-1/2 font-bold">Languages & Tools</div>
-                <div className=" text-sm text-center md:text-base w-1/2 font-bold">Frameworks & Platforms</div>
-            </div>
-
-            <div className="w-full md:w-10/12 flex justify-center items-start font-bold text-center">
-                <div className="px-2 w-1/2">
-                    <div className="flex flex-wrap justify-center items-start w-full mt-2">
-                        <img className="m-1" src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff" alt="python" />
-                        <img className="m-1" src="https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000" alt="javascript" />
-                        <img className="m-1" src="https://img.shields.io/badge/-Bash-4EAA25?style=flat&logo=gnubash&logoColor=ffffff" alt="bash" />
-                        <img className="m-1" src="https://img.shields.io/badge/-Wireshark-1679A7?style=flat&logo=wireshark&logoColor=ffffff" alt="wireshark" />
-                        <img className="m-1" src="https://img.shields.io/badge/-Nmap-00457C?style=flat&logo=security&logoColor=ffffff" alt="nmap" />
-                        <img className="m-1" src="https://img.shields.io/badge/-BurpSuite-FF6633?style=flat&logo=burpsuite&logoColor=white" alt="burpsuite" />
-                        <img className="m-1" src="https://img.shields.io/badge/-Metasploit-2E8B57?style=flat&logo=security&logoColor=white" alt="metasploit" />
-                        <img className="m-1" src="https://img.shields.io/badge/-Hydra-000000?style=flat&logo=security&logoColor=white" alt="hydra" />
-                        <img className="m-1" src="https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff" alt="git" />
+            <div className="w-full px-2 md:px-4 mt-4 pb-4">
+                {/* Row 1 */}
+                <div className="flex flex-col md:flex-row gap-3 mb-3">
+                    <div className="flex-1">
+                        <SkillCard title="Security Tools" icon="🛡">
+                            <SkillBar label="Metasploit / Burp Suite" percent={88} />
+                            <SkillBar label="Nmap / Enum4linux" percent={90} />
+                            <SkillBar label="SQLMap / Hydra" percent={82} />
+                            <SkillBar label="Cryptography / Rev Eng" percent={75} />
+                        </SkillCard>
+                    </div>
+                    <div className="flex-1">
+                        <SkillCard title="Programming & Dev" icon="</>">
+                            <SkillBar label="JavaScript / React.js" percent={88} />
+                            <SkillBar label="Python" percent={85} />
+                            <SkillBar label="Bash / PowerShell" percent={80} />
+                            <SkillBar label="TailwindCSS / Git" percent={92} />
+                        </SkillCard>
+                    </div>
+                    <div className="flex-1">
+                        <SkillCard title="Tools & Infrastructure" icon="🖥">
+                            <div className="flex flex-wrap">
+                                {['Metasploit','Burp Suite','Wireshark','Nmap','Hydra','SQLMap','Kali Linux','Docker','Enum4linux','VirtualBox','Jenkins','AWS (Basic)','Packet Tracer','Nagios/Zabbix','PuTTY/SCP'].map(t => <SkillTag key={t} label={t} />)}
+                            </div>
+                        </SkillCard>
                     </div>
                 </div>
 
-                <div className="px-2 flex flex-wrap items-start w-1/2">
-                    <div className="flex flex-wrap justify-center items-start w-full mt-2">
-                        <img className="m-1" src="https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=000" alt="linux" />
-                        <img className="m-1" src="https://img.shields.io/badge/Windows-0078D6?style=flat&logo=windows&logoColor=white" alt="windows" />
-                        <img className="m-1" src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=000" alt="react" />
-                        <img className="m-1" src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="nodejs" />
-                        <img className="m-1" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white" alt="tailwind" />
-                        <img className="m-1" src="https://img.shields.io/badge/GNS3-0081CB?style=flat&logo=gns3&logoColor=white" alt="gns3" />
-                        <img className="m-1" src="https://img.shields.io/badge/VirtualBox-183A61?style=flat&logo=virtualbox&logoColor=white" alt="virtualbox" />
-                        <img className="m-1" src="https://img.shields.io/badge/Packet Tracer-000000?style=flat&logo=cisco&logoColor=white" alt="packet tracer" />
+                {/* Row 2 */}
+                <div className="flex flex-col md:flex-row gap-3">
+                    <div className="flex-1">
+                        <SkillCard title="Networking & Protocols" icon="🌐">
+                            <SkillBar label="Active Directory" percent={86} />
+                            <SkillBar label="DNS / DHCP / VLANs" percent={85} />
+                            <SkillBar label="Cisco CLI / Routing" percent={78} />
+                            <SkillBar label="SSH / RDP / Subnetting" percent={88} />
+                        </SkillCard>
+                    </div>
+                    <div className="flex-1">
+                        <SkillCard title="System Admin & Infra" icon="⚙">
+                            <SkillBar label="Windows Server / Ubuntu" percent={85} />
+                            <SkillBar label="VMware / Hyper-V" percent={80} />
+                            <SkillBar label="Group Policy / Event Viewer" percent={78} />
+                        </SkillCard>
                     </div>
                 </div>
             </div>
-
-            <ul className=" tracking-tight text-sm md:text-base w-10/12 emoji-list mt-4">
-                <li className=" list-arrow text-sm md:text-base mt-4 leading-tight tracking-tight">
-                    <span> And of course,</span> 
-                    <img className=" inline ml-1" src="https://img.shields.io/badge/-Linux-0078D6?style=plastic&logo=linux&logoColor=ffffff" alt="linux" /> 
-                    <span> is my daily driver!</span>
-                </li>
-            </ul>
         </>
     )
+}
+
+function ExpEntry({ logo, title, company, type, period, duration, location, skills }) {
+    return (
+        <div className="flex items-start py-3 border-b border-gray-700 border-opacity-40 last:border-0">
+            <div className="w-10 h-10 mr-3 rounded flex-shrink-0 flex items-center justify-center text-lg"
+                style={{ background: '#1e2a3a', border: '1px solid #2e4060' }}>
+                {logo}
+            </div>
+            <div className="flex-1">
+                <div className="font-bold text-sm text-white">{title}</div>
+                <div className="text-xs mt-0.5" style={{ color: '#00e5a0' }}>{company} · {type}</div>
+                <div className="text-xs text-gray-400 mt-0.5">{period} · {duration}</div>
+                <div className="text-xs text-gray-400">{location} · On-site</div>
+                {skills && <div className="text-xs mt-1 text-gray-300">💎 {skills}</div>}
+            </div>
+        </div>
+    );
+}
+
+function Experience() {
+    return (
+        <>
+            <div className="font-medium relative text-2xl mt-2 md:mt-4 mb-4">
+                Experience
+                <div className="absolute pt-px bg-white mt-px top-full w-full">
+                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 left-full"></div>
+                    <div className="bg-white absolute rounded-full p-0.5 md:p-1 top-0 transform -translate-y-1/2 right-full"></div>
+                </div>
+            </div>
+            <div className="w-10/12 mt-4">
+                <ExpEntry
+                    logo="🏢"
+                    title="GEA – IT Infrastructure"
+                    company="Suchi Semicon Pvt Ltd"
+                    type="Full-time"
+                    period="Apr 2026 - Present"
+                    duration="3 mos"
+                    location="Surat, Gujarat, India"
+                />
+                <ExpEntry
+                    logo="🖥"
+                    title="Hardware Support Engineer"
+                    company="MSI"
+                    type="Full-time"
+                    period="Dec 2025 - Mar 2026"
+                    duration="4 mos"
+                    location="Surat, Gujarat, India"
+                />
+                <ExpEntry
+                    logo="💻"
+                    title="Frontend Web Developer"
+                    company="Depthin solution"
+                    type="Part-time"
+                    period="Aug 2023 - Oct 2024"
+                    duration="1 yr 3 mos"
+                    location="Surat, Gujarat, India"
+                    skills="React.js, Project Management and +1 skill"
+                />
+                <ExpEntry
+                    logo="🎓"
+                    title="Frontend Web Developer Intern"
+                    company="Bluesoft Infotech"
+                    type="Internship"
+                    period="Jun 2023 - Aug 2023"
+                    duration="3 mos"
+                    location="Mota varacha"
+                />
+            </div>
+        </>
+    );
 }
 
 function Projects() {
